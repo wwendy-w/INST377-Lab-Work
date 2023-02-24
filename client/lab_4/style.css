@@ -252,13 +252,13 @@ div.carousel {
   height: 45px;
   padding: 10px;
   line-height: 0; /* This centers a button's text! */
-  border: 2px solid rgb(99,99,99); /* shorthand for how to do a border */
+  border: 2px solid rgb(185, 12, 78); /* shorthand for how to do a border */
 }
 
 .prev:focus,
 .next:focus {
   margin: 0;
-  border: 2px solid rgb(125, 14, 64);
+  border: 2px solid rgb(159, 0, 58);
   /* Pick a good border colour and check out how it works with your buttons */
 }
 
