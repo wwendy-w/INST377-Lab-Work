@@ -39,7 +39,7 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
@@ -117,7 +117,7 @@ form {
 */
 
 .box {
-  background-color: rgba(239, 239, 239, 0.40);
+  background-color: rgba(210, 42, 42, 0.4)
   border: 2px dashed;
   border-radius: 4px;
 
@@ -128,14 +128,14 @@ form {
 }
 
 .left_section {
-  background-color: rgba(0, 139, 139, 0.8);
+  background-color: rgba(10, 22, 22, 0.8);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(255, 224, 138, 0.7);
+  background-color: rgba(185, 144, 33, 0.7);
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -268,7 +268,6 @@ div.carousel {
   background-color: rgba(212, 171, 244, 0.7);
   /* Pick a good background colour for your hover pseudoclass */
 }
-
 
 /*
 Form Styles
