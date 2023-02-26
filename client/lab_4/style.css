@@ -30,7 +30,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(216, 236, 240);
 }
 
 
@@ -92,8 +92,8 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: #ffe08a;
-  color: #4a4a4a;
+  background-color: #9ecfb5;
+  color: #ba5d8a;
 
   /* shapes */
   border-radius: 6px;
@@ -117,7 +117,7 @@ form {
 */
 
 .box {
-  background-color: rgba(210, 42, 42, 0.4)
+  background-color: rgba(214, 61, 61, 0.4)
   border: 2px dashed;
   border-radius: 4px;
 
@@ -128,18 +128,21 @@ form {
 }
 
 .left_section {
-  background-color: rgba(10, 22, 22, 0.8);
+  background-color: rgba(235, 202, 220, 0.7);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(185, 144, 33, 0.7);
+  background-color: rgba(165, 201, 157, 0.7);
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
+  justify-content: center;
   max-width: 450px;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -151,7 +154,7 @@ form {
 .footer {
   flex-shrink: 0;
   padding: 1rem;
-  background-color: rgba(0, 139, 139, 0.8);
+  background-color: rgba(93, 29, 67, 0.8);
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -303,6 +306,17 @@ form input {
     /* Rules in here will only apply when a screen is the correct size */
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
-      background-color: rgba(204, 8, 162, 0.65);
+      background-color: rgba(194, 127, 167, 0.65);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 100%;
+      width: -moz-available;          /* WebKit-based browsers will ignore this. */
+      width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+      width: fill-available;
+      align-items: flex-start;
     }
 }
