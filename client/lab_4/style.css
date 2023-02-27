@@ -74,9 +74,9 @@ form {
 }
 
 .header {
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 0rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
   padding-bottom: 1.5rem;
 }
 
@@ -89,10 +89,11 @@ form {
 
 .header h1 {
   display: block;
+  border: 2px dashed;
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: #9ecfb5;
+  background-color: #a0d1ac;
   color: #ba5d8a;
 
   /* shapes */
@@ -132,17 +133,19 @@ form {
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
+  border: 2px dashed;
 }
 
 .right_section {
   background-color: rgba(165, 201, 157, 0.7);
-  flex: 1 2 auto;
+  flex: 1 1 auto;
   margin: 1rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 450px;
   display: flex;
   flex-direction: column;
+  border: 2px dashed;
 }
 
 /*
@@ -157,10 +160,11 @@ form {
   background-color: rgba(93, 29, 67, 0.8);
   font-size: 1.2rem;
   font-weight: 600;
+  border: 2px dashed;
 }
 
 .footer a {
-  color: rgba(255, 224, 138, 1);
+  color: rgb(81, 255, 223);
   text-decoration: underline;
 }
 
@@ -173,7 +177,7 @@ form {
   /* Hue, saturation, luminosity, alpha */
   background-color: hsla(0, 0%, 90%, 0.15);
   /* red, green, blue, alpha */
-  color: rgb(246, 169, 93);
+  color: rgb(246, 210, 93);
   text-decoration: none;
 }
 
