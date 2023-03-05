@@ -2,10 +2,21 @@
   Hook this script to index.html
   by adding `<script src="script.js">` just before your closing `</body>` tag
 */
+function filterList(list, query){
+  return list.filter(() => {
+    const lowerCaseName = item.name.toLowerCase();
+    const lowerCaseQuery = query.toLowerCase();
+    return lowerCaseName.includes(lowerCaseQuery);
+  })
+}
 
 async function mainEvent() { // the async keyword means we can make API requests
-  const form = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
-  form.addEventListener('submit', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
+  const mainForm = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
+  const filterButton = document.querySelector('.filter_button');
+  
+  let currentList = []; 
+
+  mainForm.addEventListener('submit', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
     submitEvent.preventDefault(); // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
     console.log('form submission'); // this is substituting for a "breakpoint"
 
@@ -18,8 +29,8 @@ async function mainEvent() { // the async keyword means we can make API requests
     */
 
     // this is the preferred way to handle form data in JS in 2022
-    const formData = new FormData(submitEvent.target); // get the data from the listener target
-    const formProps = Object.fromEntries(formData); // Turn it into an object
+    //const formData = new FormData(submitEvent.target); // get the data from the listener target
+    //const formProps = Object.fromEntries(formData); // Turn it into an object
 
     // You can also access all forms in a document by using the document.forms collection
     // But this will retrieve ALL forms, not just the one that "heard" a submit event - less good
@@ -51,11 +62,24 @@ async function mainEvent() { // the async keyword means we can make API requests
     */
 
     // This changes the response from the GET into data we can use - an "object"
-    const arrayFromJson = await results.json();
-    console.table(arrayFromJson.data); // this is called "dot notation"
+    currentList = await results.json();
+    console.table(currentList); // this is called "dot notation"
     // arrayFromJson.data - we're accessing a key called 'data' on the returned object
     // it initially contains all 1,000 records from your request
   });
+
+  filterButton.addEventListener('click', (event) =>{
+    console.log('clicked FilterButton');
+
+    const formData = new FormData(mainForm);
+    const formProps = Object.fromEntries(formData);
+
+    console.log(formProps);
+    const newList = new filterList(currentList, formProps.resto);
+
+    console.log(newList);
+
+})
 }
 
 /*
